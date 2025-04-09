@@ -51,9 +51,8 @@ public class Apr09 {
         System.out.println(b1+" "+b2);
 
         //q8
-        // Scanner scanner = new Scanner(System.in);
-        // char c3 = scanner.nextInt();
-        char c3 = 'g';
+        Scanner scanner = new Scanner(System.in);
+        char c3 = scanner.next().charAt(0);
         int c4 = (int)c3;
         System.out.println(c4);
         
