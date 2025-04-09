@@ -56,7 +56,7 @@ public class Apr09 {
         int c4 = (int)c3;
         System.out.println(c4);
         
-        //q8 --> 60.0
+        //q9 --> 60.0
         int d1=5;
         double y=10;
         System.out.println(x+y);
