@@ -4,7 +4,7 @@ public class A {
         this.str = str;
         System.out.println("constructing");
     }
-    public void show(){
+    void show(){
         System.out.println("This string was passed : "+ str);
     }
     public static void main(String[] args) {
