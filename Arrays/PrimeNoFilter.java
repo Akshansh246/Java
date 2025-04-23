@@ -1,10 +1,10 @@
 public class PrimeNoFilter {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5,6,7,8,9};
+        int[] arr = {2,3,7,88,49,66,9};
         for (int d : arr) {
             if (d>1) {
                 int count = 0;
-                for (int j = 2; j < d/2; j++) {
+                for (int j = 2; j < d; j++) {
                     if (d % j==0) {
                         count++;
                     }
