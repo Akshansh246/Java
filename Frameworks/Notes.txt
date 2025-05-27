@@ -8,7 +8,10 @@ Frameworks in Java -->
                 ⫸ HashSet bans the repetition of an element, Repetitive element won't be added to the set
                     by default unsorted. 
                 ⫸ TreeSet keeps the unique data and also sorts it.
-            ↠
+            ↠ HashMap - HashMap()
+                ⫸ Data will be stored as key and value pairs.
+                ⫸ map.put(key,value);
+                ⫸ Key should not be repetitive.
 
 
 To find time of a program
