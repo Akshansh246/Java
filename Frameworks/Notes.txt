@@ -1,0 +1,20 @@
+Frameworks in Java -->
+    Frameworks are blueprints or already build in features which are predefined and which we import in 
+    our file.
+        It has three build in *Interfaces*
+            ↠ List - ArrayList(Dynamic array doesn't have fixed size), LinkedLists
+                ⫸ CRUD(Create read update delete) operations can be performed.
+            ↠ Sets - HashSet, LinkedSet, TreeSet
+                ⫸ HashSet bans the repetition of an element, Repetitive element won't be added to the set
+                    by default unsorted. 
+                ⫸ TreeSet keeps the unique data and also sorts it.
+            ↠
+
+
+To find time of a program
+    long start = System.nanoTime();
+    ///code
+    ///code
+    long end = System.nanoTime(); 
+    total time = end -  start;        
+             
