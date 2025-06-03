@@ -1,0 +1,19 @@
+-> Multithreading is sort of async programming.
+-> How we can achieve Multiple, tasks executing at a time.
+-> Parallel programming is achieved in this.
+-> If something is done in a particular order its called Synchronous programming and if it is not
+then its called Asynchronous programming.
+
+🔹 What is a Thread?
+    A thread is a lightweight subprocess — the smallest unit of processing. It shares memory with other
+    threads of the same process, making it efficient for tasks that need to run in parallel.
+
+🔹 Thread Lifecycle
+    1)New – When a thread is created
+    2)Runnable – After start() is called
+    3)Running – When thread starts executing
+    4)Blocked/Waiting – When thread is waiting to acquire a resource or waiting for another thread
+    5)Terminated – When the run() method finishes or the thread is stopped
+    6)Dead – When the thread is no longer referenced and is eligible for garbage collection
+
+-> Main thread always runs first then user defined will run.
