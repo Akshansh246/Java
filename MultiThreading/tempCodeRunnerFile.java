@@ -1,3 +1,1 @@
-
-        // Thread thread1 = new Thread(() -> file1.run());
-        // Thread thread2 = new Thread(() -> file2.run());
+BankBalanceThread thread1 = new BankBalanceThread(account, "deposit", 500);

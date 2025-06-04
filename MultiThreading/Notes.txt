@@ -9,11 +9,24 @@ then its called Asynchronous programming.
     threads of the same process, making it efficient for tasks that need to run in parallel.
 
 🔹 Thread Lifecycle
-    1)New – When a thread is created
-    2)Runnable – After start() is called
-    3)Running – When thread starts executing
-    4)Blocked/Waiting – When thread is waiting to acquire a resource or waiting for another thread
-    5)Terminated – When the run() method finishes or the thread is stopped
-    6)Dead – When the thread is no longer referenced and is eligible for garbage collection
+    1. New – When a thread is created
+    2. Runnable – After start() is called
+    3. Running – When thread starts executing
+    4. Blocked/Waiting – When thread is waiting to acquire a resource or waiting for another thread
+    5. Terminated – When the run() method finishes or the thread is stopped
+    6. Dead – When the thread is no longer referenced and is eligible for garbage collection
 
 -> Main thread always runs first then user defined will run.
+
+-> In the case of Runnable main thread runs first rather than the user defined.
+
+-> .join should be always inside try and catch block, It pauses the main block, that means user-defined 
+will run first then the main thread.
+
+🔹 Flaws or Demerits of threads
+    1. If a varible is shared with both the threads, like in the case of back balance they will request
+    to deduct money from the balance which will create and ambuiguity as
+        balance = 1000
+        thread A requests = 800
+        thread B requests = 500
+        both conditions will be true but it will deduct 1300 from the account.
