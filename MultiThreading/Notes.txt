@@ -30,3 +30,25 @@ will run first then the main thread.
         thread A requests = 800
         thread B requests = 500
         both conditions will be true but it will deduct 1300 from the account.
+
+-> To avoid this we use Synchronization, which is a way to control the access of multiple threads
+   to shared resources. It ensures that only one thread can access a resource at a time.
+
+🔹 Synchronization
+    - Synchronization is achieved using the synchronized keyword in Java.
+    - It can be applied to methods or blocks of code.
+    - When a method or block is synchronized, only one thread can execute it at a time.
+    - This prevents data inconsistency and ensures thread safety.
+
+-> Also we can use callback functions to avoid the ambiguity in the case of threads. Or to create a New
+    thread we can use the Runnable interface.
+
+-> setPriority is used to set the priority of the thread, it can be set from 1 to 10, where 1 is the 
+   lowest and 10 is the highest priority. The default priority is 5.
+   Also we can use MAX_PRIORITY, MIN_PRIORITY, and NORM_PRIORITY constants from the Thread class.
+
+-> Thread.sleep() is used to pause the execution of the current thread for a specified amount of time.
+
+-> Thread.yield() is used to pause the current thread and allow other threads to execute. It is a way
+   to give up the CPU voluntarily. It randomly selects a thread and pauses it for a while.
+
