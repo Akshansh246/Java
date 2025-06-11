@@ -1,0 +1,3 @@
+Deposited: 3000.0 to account number: 826925
+Deposited: 20000.0 to account number: 154482
+Withdrawn: 2200.0 from account number: 154482

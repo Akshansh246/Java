@@ -1,3 +1,5 @@
+import java.io.File;
+import java.io.FileWriter;
 import java.sql.Time;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -25,6 +27,42 @@ class Transaction{
     }
 }
 
+class CreateFile {
+    void createFile(String filename){
+        try {
+            File file = new File(filename);
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+        }catch (java.io.IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+    
+}
+
+class saveDataToFile {
+    void SaveToAfile(String data, String fileName) {
+        if (fileName == null || fileName.isEmpty()) {
+            System.out.println("File name cannot be null or empty.");
+            return;
+        }
+        try {
+            FileWriter writer = new FileWriter(fileName, true);
+            writer.write(data + "\n");
+            writer.close();
+            System.out.println("Data saved to file successfully.");
+        } catch (java.io.IOException e) {
+            System.out.println("An error occurred while saving data to file.");
+            e.printStackTrace();
+        }
+    }
+    
+}
+
 class BankAccount{
     private String name;
     private double balance;
@@ -41,7 +79,11 @@ class BankAccount{
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
+            CreateFile createFile = new CreateFile();
+            createFile.createFile("transactions.txt");
             transactions.add(new Transaction("Deposit", amount));
+            saveDataToFile saveToAfile = new saveDataToFile();
+            saveToAfile.SaveToAfile("Deposited: " + amount + " to account number: " + accountNumber, "transactions.txt");
             System.out.println("Deposited: " + amount);
         } else {
             System.out.println("Deposit amount must be positive.");
@@ -54,12 +96,19 @@ class BankAccount{
         Users user = new Users(name, accountNumber, time);
         users.add(user);
         System.out.println("User added: " + name + " with account number " + accountNumber);
+        CreateFile createFile = new CreateFile();
+        createFile.createFile("users.txt");
+        saveDataToFile saveToAfile = new saveDataToFile();
+        saveToAfile.SaveToAfile("User: " + name + ", Account Number: " + accountNumber + ", Time: " + time, "users.txt");   
     }
 
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            transactions.add(new Transaction("Withdraw", amount));
+            CreateFile createFile = new CreateFile();
+            createFile.createFile("transactions.txt");
+            saveDataToFile saveToAfile = new saveDataToFile();
+            saveToAfile.SaveToAfile("Withdrawn: " + amount + " from account number: " + accountNumber, "transactions.txt");    
             System.out.println("Withdrawn: " + amount);
         } else if (amount > balance) {
             System.out.println("Insufficient funds for withdrawal.");
@@ -172,17 +221,31 @@ public class BankApp {
                     break;
 
                 case 8:
-                    ArrayList<Users> users = account.users;
-                    if(users.isEmpty()) {
-                        System.out.println("No users found.");
-                        System.out.println();
-                        break;
-                    }
-                    System.out.println("Users:");
-                    for (Users u : users) {
-                        System.out.println("Name: " + u.name + ", Account Number: " + u.accountNumber + ", Time: " + u.time);
+                    // ArrayList<Users> users = account.users;
+                    // if(users.isEmpty()) {
+                    //     System.out.println("No users found.");
+                    //     System.out.println();
+                    //     break;
+                    // }
+                    // System.out.println("Users:");
+                    // for (Users u : users) {
+                    //     System.out.println("Name: " + u.name + ", Account Number: " + u.accountNumber + ", Time: " + u.time);
+                    // }
+                    try {
+                        File file = new File("users.txt");
+                        if (file.exists()) {
+                            Scanner fileScanner = new Scanner(file);
+                            while (fileScanner.hasNextLine()) {
+                                String line = fileScanner.nextLine();
+                                System.out.println(line);
+                            }
+                        }
+                    } catch (Exception e) {
+                        System.out.println("An error occurred while reading the file.");
+                        e.printStackTrace();
                     }
                     System.out.println();
+
                     break;
                 
                 default:

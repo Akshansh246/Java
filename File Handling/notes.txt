@@ -1,0 +1,7 @@
+-> It allows us to read and write files in Java.
+-> CRUD operations can be performed on files.
+    -> C stands for Create, 
+    -> R for Read, 
+    -> U for Update, 
+    -> D for Delete.
+-> The java.io package provides classes for file handling.
