@@ -166,7 +166,6 @@ public class BankApp {
                     System.out.println("Account created at: " + currentTime);
                     System.out.println("Current time: " + currentTime.toString());
                     System.out.println();
-
                     break;
                 
                 case 2:
